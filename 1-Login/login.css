@@ -168,10 +168,6 @@ form button:hover {
     justify-content: space-around;
 }
 
-#name input {
-    width: 49%;
-}
-
 #otpGenerate {
     display: flex;
     justify-content: space-evenly;
