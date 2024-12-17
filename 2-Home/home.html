@@ -1,44 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Doctor Appointment System</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hospital Home Page</title>
+   <link rel="stylesheet" href="home.css">
 </head>
 <body>
-  <h1>Doctor Appointment System</h1>
-  <div>
-    <h2>Add Appointment</h2>
-    <div class="form-group">
-      <label for="name">Patient Name:</label>
-      <input type="text" id="name" />
-    </div>
-    <div class="form-group">
-      <label for="doctor">Doctor:</label>
-      <input type="text" id="doctor">
-    </div>
-    <div class="form-group">
-      <label for="date">Date:</label>
-      <input type="date" id="date" />
-    </div>
-    <button id="addAppointment">Add Appointment</button>
-  </div>
+    <!-- Header -->
+    <header>
+        <h1>Welcome to Our Hospital</h1>
+        <p>Your Health, Our Priority</p>
+    </header>
 
-  <h2>Appointments</h2>
-  <table>
-    <thead>
-      <tr>
-        <th>ID</th>
-        <th>Patient Name</th>
-        <th>Doctor</th>
-        <th>Date</th>
-        <th>Actions</th>
-      </tr>
-    </thead>
-    <tbody id="appointmentList">
-    </tbody>
-  </table>
+    <!-- Navigation -->
+    <nav>
+      <a href="..//2-Home/home.html">Home</a>
+      <a href="..//3-About-us/about.html">About Us</a>
+      <a href="../4-service/service.html">Services</a>
+      <a href="..//5-contact/contact.html">Contact</a>
+    </nav>
 
-  <script src="home.js" ></script>
+    <!-- Main Content -->
+    <div class="main">
+        <h2>About Our Hospital</h2>
+        <p>We provide top-notch medical care with modern facilities and experienced doctors. Your well-being is our mission.</p>
+        
+        <h2>Our Services</h2>
+        <div class="services">
+            <div class="service-box">
+                <h3>Emergency Care</h3>
+                <p>24/7 emergency services with quick response time.</p>
+            </div>
+            <div class="service-box">
+                <h3>Specialist Doctors</h3>
+                <p>Consult the best doctors across various specialties.</p>
+            </div>
+            <div class="service-box">
+                <h3>Modern Facilities</h3>
+                <p>State-of-the-art equipment for better treatment.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Our Hospital. All Rights Reserved.</p>
+    </footer>
 </body>
 </html>

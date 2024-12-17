@@ -1,34 +1,7 @@
 {
-  "appointments": [
-    {
-      "id": "b748",
-      "name": "12",
-      "doctor": "123",
-      "date": "0123-12-03"
-    },
-    {
-      "id": "9e73",
-      "name": "1",
-      "doctor": "1",
-      "date": "2024-12-01"
-    },
-    {
-      "id": "1d2f",
-      "name": "1",
-      "doctor": "1",
-      "date": "2024-12-01"
-    },
-    {
-      "id": "26cf",
-      "name": "1",
-      "doctor": "1",
-      "date": "2024-12-01"
-    },
-    {
-      "id": "b392",
-      "name": "jnb",
-      "doctor": "k",
-      "date": "275760-04-04"
-    }
+  "appointments": [],
+  "patient": [],
+  "doctor": [
+   
   ]
 }
