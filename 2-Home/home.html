@@ -13,9 +13,9 @@
                 <h1>City Hospital</h1>
                 <nav>
                     <a href="#">Home</a>
-                    <a href="#">About Us</a>
-                    <a href="#">Services</a>
-                    <a href="#">Contact</a>
+                    <a href="#about-us">About Us</a>
+                    <a href="#services">Services</a>
+                    <a href="#contact">Contact</a>
                 </nav>
             </header>
             <!-- Hero Section -->
@@ -26,7 +26,7 @@
             </section>
         </section>
         <!-- Services Section -->
-        <section class="services">
+        <section class="services" id="services">
             <div class="service-card">
                 <h3>Emergency Care</h3>
                 <p>We provide 24/7 emergency services for critical and urgent medical needs. Our expert team is ready to help you at any time.</p>
@@ -52,6 +52,30 @@
                 <p>Our rehabilitation services help patients recover and regain their strength after surgery or illness, with personalized therapy programs.</p>
             </div>
         </section>
+        <section class="about-us" id="about-us">
+            <h2>About City Hospital</h2>
+            <p>At City Hospital, we are committed to providing the highest quality healthcare services. Established with the mission to improve the health and well-being of our community, we provide a range of services from emergency care to specialized treatments. Our team of dedicated professionals ensures that every patient receives personalized, compassionate care. We strive to stay at the forefront of medical advancements and offer state-of-the-art facilities to meet your needs.</p>
+            <img src="https://via.placeholder.com/600x400" alt="Hospital Image">
+        </section>
+        <!-- Our Team Section -->
+        <section class="team">
+            <h3>Meet Our Team</h3>
+            <div class="team-member">
+                <img src="https://via.placeholder.com/150" alt="Doctor">
+                <h4>Dr. John Doe</h4>
+                <p>Chief Medical Officer</p>
+            </div>
+            <div class="team-member">
+                <img src="https://via.placeholder.com/150" alt="Doctor">
+                <h4>Dr. Jane Smith</h4>
+                <p>Specialist in Cardiology</p>
+            </div>
+            <div class="team-member">
+                <img src="https://via.placeholder.com/150" alt="Doctor">
+                <h4>Dr. Emily Clark</h4>
+                <p>Head of Emergency Care</p>
+            </div>
+        </section>
         <!-- Testimonials Section -->
         <section class="testimonials">
             <h2>What Our Patients Say</h2>
@@ -64,10 +88,51 @@
                 <p>"I felt completely safe and cared for throughout my treatment. Highly recommended!"</p>
             </div>
         </section>
+        <!-- Contact Section -->
+        <section class="contact" id="contact">
+            <div class="contact-info">
+                <h2>Contact Us</h2>
+                <p>We’re here to help. Feel free to reach out to us for any inquiries or assistance.</p>
+                <div class="infoBox">
+                    
+                <div class="info-item">
+                    <h3>Address</h3>
+                    <p>123 Main Street, Cityville, State, 123456</p>
+                </div>
+                <div class="info-item">
+                    <h3>Phone</h3>
+                    <p>+1 234 567 890</p>
+                </div>
+                <div class="info-item">
+                    <h3>Email</h3>
+                    <p>info@cityhospital.com</p>
+                </div>
+                </div>
+            </div>
+            <form class="contact-form">
+                <h3>Send Us a Message</h3>
+                <input
+                    type="text"
+                    name="name"
+                    placeholder="Your Name"
+                    required
+                >
+                <input
+                    type="email"
+                    name="email"
+                    placeholder="Your Email"
+                    required
+                >
+                <textarea name="message" placeholder="Your Message" required></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+        </section>
         <!-- Footer Section -->
         <footer>
-            <p>&copy; 2024 City Hospital |
-                <a href="#">Privacy Policy</a> |
+            <p>
+                &copy; 2024 City Hospital |
+                <a href="#">Privacy Policy</a>
+                |
                 <a href="#">Terms of Service</a>
             </p>
         </footer>
