@@ -1,14 +1,17 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Varela+Round&display=swap");
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    scroll-behavior: smooth;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Varela Round", sans-serif;
+  scroll-behavior: smooth;
 }
 
-/* section {
-    border: 1px solid rgb(255, 0, 0);
-    margin-bottom: 5px;
-} */
+
+section {
+    border: 1px solid rgb(193, 193, 193);
+
+}
 
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -41,7 +44,6 @@ header {
     align-items: center;
     background-color: #007bff;
     color: white;
-    padding: 20px 0;
     text-align: center;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
@@ -183,7 +185,7 @@ nav a:hover {
 /* About Us Section */
 .about-us {
     background-color: #ffffff;
-    padding: 60px 20px;
+    
     text-align: center;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
@@ -213,6 +215,7 @@ nav a:hover {
 
 
 /* Our Team Section */
+
 .team {
     padding: 60px 20px;
     background-color: #f1f1f1;
@@ -224,10 +227,16 @@ nav a:hover {
     font-size: 2em;
     margin-bottom: 20px;
 }
+#team-member{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
 
 .team-member {
     display: inline-block;
-    width: 30%;
+
     margin: 15px;
     text-align: center;
 }
@@ -256,15 +265,21 @@ nav a:hover {
 
 /* Contect sec */
 .contact {
+    display: grid;
+    grid-template-columns: auto auto;
     padding: 60px 20px;
-    background: linear-gradient(135deg, #007bff, #0056b3);
+    background: linear-gradient(135deg, #539ae6, #2870be);
     color: #fff;
-    text-align: center;
     font-family: 'Arial', sans-serif;
-    display: flex;
+  
     justify-content: space-evenly;
 }
 
+@media (max-width:969px) {
+    .contact{
+        grid-template-columns: auto;
+    }
+}
 .contact h2 {
     font-size: 2.5em;
     margin-bottom: 20px;
@@ -278,11 +293,8 @@ nav a:hover {
 }
 
 .contact-info {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 40px;
-    margin-bottom: 40px;
+  display: grid;
+  align-items: center;
 }
 
 
@@ -306,6 +318,7 @@ nav a:hover {
 
 .contact-form input,
 .contact-form textarea {
+    
     width: 100%;
     padding: 15px;
     margin-bottom: 15px;
