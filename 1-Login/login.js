@@ -95,7 +95,7 @@ login.addEventListener("click", (e) => {
         }
         else {
             alert("congratulation you are succesfuly log in ")
-            window.location.href = "../index.html";
+            window.location.href = "../2-Home/home.html";
         }
     }
 

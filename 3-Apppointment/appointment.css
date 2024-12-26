@@ -1,11 +1,15 @@
-body {
+
+*{
+    
     font-family: Arial, sans-serif;
-    background-color: #f4f4f9;
     margin: 0;
     padding: 0;
+    transition: all 0.1s ease ;
+    box-sizing: border-box;
 }
 
 .container {
+    background-color: hsl(0, 100%, 71%);
     max-width: 600px;
     margin: 50px auto;
     background: #bbbbbb;
@@ -27,8 +31,7 @@ label {
 }
 
 input,
-select,
-button {
+select{
     width: 90%;
     padding: 10px;
     margin-bottom: 15px;
@@ -36,7 +39,14 @@ button {
     border-radius: 5px;
     font-size: 16px;
 }
-
+button {
+    width: 95%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+}
 button {
     background-color: #4CAF50;
     color: white;
@@ -49,20 +59,39 @@ button:hover {
 }
 
 .part {
-    width: 93%;
-    /* border: 1px solid rgb(45, 45, 45); */
+    width: 90%;
     display: flex;
     text-align: center;
 }
-.one, .two{
-    /* border: 1px solid rgb(195, 8, 8); */
+
+.one,
+.two {
     width: 100%;
 }
 
-.one input, .two input{
+.one input,
+.two input {
     width: 80%;
 }
 
-.one select, .two select{
+.one select,
+.two select {
     width: 85%;
+}
+
+@media (max-width:610px) {
+    .part {
+        display: block;
+        text-align: left;
+    }
+
+    .one input,
+    .two input {
+        width: 100%;
+    }
+
+    .one select,
+    .two select {
+        width: 105%;
+    }
 }

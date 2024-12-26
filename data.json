@@ -1,7 +1,27 @@
 {
-  "appointments": [],
-  "patient": [],
-  "doctor": [
-    
-  ]
+  "Dr. Smith": [
+    {
+      "id": "5e08",
+      "date": "2024-12-01",
+      "time": "12:00 PM",
+      "phone": "1"
+    },
+    {
+      "id": "ff86",
+      "date": "2024-12-02",
+      "time": "2:00 PM",
+      "phone": "21"
+    },
+    {
+      "id": "8a96",
+      "date": "2024-12-01",
+      "time": "12:30 PM",
+      "phone": "q"
+    }
+  ],
+  "Dr. Johnson": [],
+  "Dr. Lee": [],
+  "Dr. Brown": [],
+  "Dr. Davis": [],
+  "Dr. Miller": []
 }
