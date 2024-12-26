@@ -39,7 +39,7 @@ function timeConvert(time24) {
 }
 
 // ############################## POST-DATA ##############################
-async function appointment(selectedDr) {
+async function BoolSlot(selectedDr) {
     //========>> take data from form
     let time24 = document.querySelector("#time").value;
     const time = timeConvert(time24);
@@ -60,9 +60,9 @@ async function appointment(selectedDr) {
         alert("Chose diffrent slot dr. has appointed")
         return false;
     }
-
-
-
+    // 2. ===============> Sunday on the date or not (only Emergency Dr. present)
+    // 3. ===============> Lunch Time (only Emergency Dr. present) 
+    // 4. ===============> night-shift (only Emergency Dr. present) 
     // =====> try to POST DATA
     try {
         let response = await fetch(appointmentURL, {
@@ -83,58 +83,7 @@ let submit = document.querySelector("#submit");
 form.addEventListener("submit", (e) => {
     e.preventDefault();
     const doctor = doctorSelect.value;
-    appointment(doctor);
+    BoolSlot(doctor);
 });
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// // input selection
-// const name = document.querySelector("#name");
-// const date = document.querySelector("#date");
-// const phone = document.querySelector("#phone");
-// const time = document.querySelector("#time");
-// const specialty = document.querySelector("#specialty");
-// const doctor = document.querySelector("#doctor");
-
-// // input value selection
-// const nameVal = document.querySelector("#name").value;
-// const dateVal = document.querySelector("#date").value;
-// const phoneVal = document.querySelector("#phone").value;
-// const timeVal = document.querySelector("#time").value;
-// const specialtyVal = document.querySelector("#specialty").value;
-// const doctorVal = document.querySelector("#doctor").value;
-// if (!nameVal || !dateVal || !phoneVal ||
-//     !timeVal || specialtyVal == "Select"
-//     || doctorVal == "Select") {
-//     alert("all field required");
-//     let alertColor = "3px solid hsl(0, 100.00%, 50%)"
-
-//     //    if selected then default
-//     if (nameVal) name.style.borderBottom = "none";
-//     if (phoneVal) phone.style.borderBottom = "none";
-//     if (dateVal) date.style.borderBottom = "none";
-//     if (timeVal) time.style.borderBottom = "none";
-//     if (specialtyVal) specialty.style.borderBottom = "none";
-//     if (doctorVal) doctor.style.borderBottom = "none";
-
-//     //    if not-selected then border red
-//     if (!nameVal) name.style.borderBottom = alertColor;
-//     else if (!phoneVal) phone.style.borderBottom = alertColor;
-//     else if (!dateVal) date.style.borderBottom = alertColor;
-//     else if (!timeVal) time.style.borderBottom = alertColor;
-//     else if (specialtyVal == "Select") specialty.style.borderBottom = alertColor;
-//     else if (doctorVal == "Select") doctor.style.borderBottom = alertColor;
-// }
