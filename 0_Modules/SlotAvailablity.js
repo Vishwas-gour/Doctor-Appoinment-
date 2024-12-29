@@ -1,4 +1,5 @@
 function SlotAvailability(date, time, time24, data) {
+    
     let split = time24.split(":");
     let hours = split[0];
     // 1. =================> Sunday on the date or not (only Emergency Dr. present)
@@ -8,7 +9,6 @@ function SlotAvailability(date, time, time24, data) {
         if (!confirm("Sunday (only Emergency Doctor available). Proceed?")) {
             return false;
         }
-        return true;
     }
 
     // 2. =================> if slot is already booked  
@@ -16,7 +16,6 @@ function SlotAvailability(date, time, time24, data) {
         if ((e.date == date) && e.time == time) {
             return false;
         }
-        return true;
     });
 
     //  if slotAlloted = false;
@@ -36,9 +35,9 @@ function SlotAvailability(date, time, time24, data) {
         if (!confirm("Night shift (only Emergency Doctor available). Proceed?")) {
             return false;
         }
-        return true;
-      
     }
+    
+    return true;
 
 }
 

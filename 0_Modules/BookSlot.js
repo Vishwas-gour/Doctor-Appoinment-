@@ -1,6 +1,13 @@
 import TimeConverter from "../0_Modules/TimeConverter.js"
 import SlotAvailability from "./SlotAvailablity.js";
 
+
+let login = document.querySelector("#login-info")
+let email = localStorage.getItem("email");
+let name = localStorage.getItem("fullname");
+login.innerHTML = name + " ";
+login.innerHTML += email
+
 async function BookSlot(selectedDr) {
     //========>> take data from form
     let time24 = document.querySelector("#time").value;
@@ -9,6 +16,7 @@ async function BookSlot(selectedDr) {
     const phone = document.querySelector("#phone").value;
 
     let appointmentURL = `http://localhost:3000/${selectedDr}`;
+    let allAppointement = `http://localhost:3000/All`
     let obj = await fetch(appointmentURL);
     let data = await obj.json();
 
@@ -17,9 +25,10 @@ async function BookSlot(selectedDr) {
     if (!ans) {
         return false;
     }
-    
+
     // =====> try to POST DATA
     try {
+        // In Docter DATABSE
         let response = await fetch(appointmentURL, {
             method: "POST",
             body: JSON.stringify({ date, time, phone }),
@@ -27,7 +36,17 @@ async function BookSlot(selectedDr) {
                 "Content-Type": "application/json",
             },
         });
-        if (response.ok) alert("appointment fixed");
+
+        // In Hospital DATABSE
+        let allResponse = await fetch(allAppointement, {
+            method: "POST",
+            body: JSON.stringify({ date, time, phone, selectedDr}),
+            headers: {
+                "Content-Type": "application/json",
+            },
+        });
+
+        if (response.ok || allResponse.ok) alert("appointment fixed");
     }
     catch (error) {
         alert(error)

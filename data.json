@@ -1,15 +1,25 @@
 {
-  "Dr. Smith": [
+  "All": [
     {
-      "id": "288b",
-      "date": "2024-12-01",
-      "time": "1:30 PM",
+      "id": "4b5e",
+      "date": "2024-12-02",
+      "time": "11:30 PM",
+      "phone": "1",
+      "selectedDr": "Dr. Lee"
+    }
+  ],
+  "Dr. Smith": [],
+  "Dr. Johnson": [],
+  "Dr. Lee": [
+    {
+      "id": "dfe3",
+      "date": "2024-12-02",
+      "time": "11:30 PM",
       "phone": "1"
     }
   ],
-  "Dr. Johnson": [],
-  "Dr. Lee": [],
   "Dr. Brown": [],
   "Dr. Davis": [],
-  "Dr. Miller": []
+  "Dr. Miller": [],
+  "Patients":[]
 }
