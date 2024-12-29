@@ -101,3 +101,9 @@ button:hover {
         width: 105%;
     }
 }
+
+.mySlots{
+    display: flex;
+    list-style: none;
+    justify-content: space-evenly;
+}

@@ -16,7 +16,8 @@ async function BookSlot(selectedDr) {
     const phone = document.querySelector("#phone").value;
 
     let appointmentURL = `http://localhost:3000/${selectedDr}`;
-    let allAppointement = `http://localhost:3000/All`
+    let allAppointementURL = `http://localhost:3000/All`
+    let petientsAppointementURl = `http://localhost:3000/Patients`
     let obj = await fetch(appointmentURL);
     let data = await obj.json();
 
@@ -38,15 +39,26 @@ async function BookSlot(selectedDr) {
         });
 
         // In Hospital DATABSE
-        let allResponse = await fetch(allAppointement, {
+        let allResponse = await fetch(allAppointementURL, {
             method: "POST",
-            body: JSON.stringify({ date, time, phone, selectedDr}),
+            body: JSON.stringify({ date, time, phone, selectedDr }),
             headers: {
                 "Content-Type": "application/json",
             },
         });
 
-        if (response.ok || allResponse.ok) alert("appointment fixed");
+        let specialtySelect = document.querySelector("#specialty").value;
+
+        // In Hospital DATABSE
+        let patientsResponse = await fetch(petientsAppointementURl, {
+            method: "POST",
+            body: JSON.stringify({ date, time, selectedDr, specialtySelect, email }),
+            headers: {
+                "Content-Type": "application/json",
+            },
+        });
+
+        if (response.ok || allResponse.ok || patientsResponse) alert("appointment fixed");
     }
     catch (error) {
         alert(error)
