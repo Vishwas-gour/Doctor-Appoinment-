@@ -1,19 +1,19 @@
+* {
 
-*{
-    
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    transition: all 0.1s ease ;
+    transition: all 0.1s ease;
     box-sizing: border-box;
 }
 
-#login-info{
+#login-info {
     text-align: center;
     font-size: 2rem;
     font-weight: 700;
     background-color: grey;
 }
+
 .container {
     background-color: hsl(0, 100%, 71%);
     max-width: 600px;
@@ -37,7 +37,7 @@ label {
 }
 
 input,
-select{
+select {
     width: 90%;
     padding: 10px;
     margin-bottom: 15px;
@@ -45,6 +45,7 @@ select{
     border-radius: 5px;
     font-size: 16px;
 }
+
 button {
     width: 95%;
     padding: 10px;
@@ -53,6 +54,7 @@ button {
     border-radius: 5px;
     font-size: 16px;
 }
+
 button {
     background-color: #4CAF50;
     color: white;
@@ -102,8 +104,19 @@ button:hover {
     }
 }
 
-.mySlots{
+.appointmentHeading input {
+    /* font-weight: 900; */
+}
+
+.mySlots {
+    padding: 1rem;
     display: flex;
     list-style: none;
-    justify-content: space-evenly;
+    justify-content: space-around;
+    align-items: center;
+    border: 1px solid black;
+}
+
+.mySlots li input {
+    text-align: center;
 }

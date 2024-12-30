@@ -1,13 +1,11 @@
 import TimeConverter from "../0_Modules/TimeConverter.js"
 import SlotAvailability from "./SlotAvailablity.js";
 
-
 let login = document.querySelector("#login-info")
 let email = localStorage.getItem("email");
 let name = localStorage.getItem("fullname");
 login.innerHTML = name + " ";
 login.innerHTML += email
-
 async function BookSlot(selectedDr) {
     //========>> take data from form
     let time24 = document.querySelector("#time").value;
@@ -28,20 +26,29 @@ async function BookSlot(selectedDr) {
     }
 
     // =====> try to POST DATA
+    let postId;
     try {
         // In Docter DATABSE
-        let response = await fetch(appointmentURL, {
+        let responseDocter = await fetch(appointmentURL, {
             method: "POST",
             body: JSON.stringify({ date, time, phone }),
-            headers: {
-                "Content-Type": "application/json",
-            },
+            headers: { "Content-Type": "application/json" }
+        })
+        // .then only for the purpose of getting id form POST data
+        .then(response => response.json()) // Parse the JSON response
+        .then(post => {
+            console.log("Posted data:", post);
+            postId = post.id
+            console.log("ID of the new post:", postId); // Check the ID of the created post
+        }).catch(error => {
+            console.error("Error:", error);
         });
-
+        // console.log("-->", response.json());
+        let a = 1000000000000000;
         // In Hospital DATABSE
         let allResponse = await fetch(allAppointementURL, {
             method: "POST",
-            body: JSON.stringify({ date, time, phone, selectedDr }),
+            body: JSON.stringify({ id: postId, date, time, phone, selectedDr }),
             headers: {
                 "Content-Type": "application/json",
             },
@@ -49,19 +56,19 @@ async function BookSlot(selectedDr) {
 
         let specialtySelect = document.querySelector("#specialty").value;
 
-        // In Hospital DATABSE
+        // In Petient DATABSE
         let patientsResponse = await fetch(petientsAppointementURl, {
             method: "POST",
-            body: JSON.stringify({ date, time, selectedDr, specialtySelect, email }),
+            body: JSON.stringify({ id: postId, date, time, selectedDr, specialtySelect, email }),
             headers: {
                 "Content-Type": "application/json",
             },
         });
 
-        if (response.ok || allResponse.ok || patientsResponse) alert("appointment fixed");
+        if (allResponse.ok || patientsResponse.ok) alert("appointment fixed");
     }
     catch (error) {
-        alert(error)
+        alert("-->" + error)
     }
 }
 

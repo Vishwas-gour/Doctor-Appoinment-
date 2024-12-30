@@ -1,34 +1,10 @@
 {
-  "All": [
-    {
-      "id": "61e3",
-      "date": "2024-12-10",
-      "time": "12:00 PM",
-      "phone": "my name",
-      "selectedDr": "Dr. Smith"
-    }
-  ],
-  "Dr. Smith": [
-    {
-      "id": "de69",
-      "date": "2024-12-10",
-      "time": "12:00 PM",
-      "phone": "my name"
-    }
-  ],
+  "All": [],
+  "Dr. Smith": [],
   "Dr. Johnson": [],
   "Dr. Lee": [],
   "Dr. Brown": [],
   "Dr. Davis": [],
   "Dr. Miller": [],
-  "Patients": [
-    {
-      "id": "3341",
-      "date": "2024-12-10",
-      "time": "12:00 PM",
-      "selectedDr": "Dr. Smith",
-      "specialtySelect": "cardiology",
-      "email": "vishwasgmail"
-    }
-  ]
+  "Patients": []
 }
