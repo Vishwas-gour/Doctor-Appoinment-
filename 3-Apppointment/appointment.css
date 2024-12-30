@@ -104,8 +104,9 @@ button:hover {
     }
 }
 
-.appointmentHeading input {
-    /* font-weight: 900; */
+.appointmentHeading input:focus {
+    border: navajowhite;
+    outline: none;
 }
 
 .mySlots {

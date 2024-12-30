@@ -34,7 +34,7 @@ async function BookSlot(selectedDr) {
             body: JSON.stringify({ date, time, phone }),
             headers: { "Content-Type": "application/json" }
         })
-        // .then only for the purpose of getting id form POST data
+        // .then only for the purpose of getting id from POST data
         .then(response => response.json()) // Parse the JSON response
         .then(post => {
             console.log("Posted data:", post);
@@ -68,8 +68,7 @@ async function BookSlot(selectedDr) {
         if (allResponse.ok || patientsResponse.ok) alert("appointment fixed");
     }
     catch (error) {
-        alert("-->" + error)
+        alert("Response Error" + error)
     }
 }
-
 export default BookSlot;
