@@ -1,9 +1,9 @@
-// -----> Select Dr. according to Specialty 
+// -----> Select Dr-according to Specialty 
 function SelectDr(specialtySelect, doctorSelect) {
     const doctors = {
-        cardiology: ['Dr. Smith', 'Dr. Johnson', 'Dr. Lee'],
-        neurology: ['Dr. Brown', 'Dr. Davis', 'Dr. Miller'],
-        orthopedics: ['Dr. Lee', 'Dr. Smith', 'Dr. Brown']
+        cardiology: ['Dr-Smith', 'Dr-Johnson', 'Dr-Lee'],
+        neurology: ['Dr-Brown', 'Dr-Davis', 'Dr-Miller'],
+        orthopedics: ['Dr-Lee', 'Dr-Smith', 'Dr-Brown']
     };
 
     const specialtySelected = specialtySelect.value;

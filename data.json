@@ -1,54 +1,24 @@
 {
-  "All": [
+  "Dr-Smith": [
     {
-      "id": "0e82",
+      "id": "73fd",
       "date": "2024-12-11",
-      "time": "2:30 PM",
-      "phone": "123",
-      "selectedDr": "Dr. Brown"
-    },
-    {
-      "id": "d24b",
-      "date": "2024-12-11",
-      "time": "2:00 PM",
-      "phone": "2e3",
-      "selectedDr": "Dr. Brown"
-    }
-  ],
-  "Dr. Smith": [],
-  "Dr. Johnson": [],
-  "Dr. Lee": [],
-  "Dr. Brown": [
-    {
-      "id": "0e82",
-      "date": "2024-12-11",
-      "time": "2:30 PM",
+      "time": "10:30 PM",
       "phone": "123"
-    },
-    {
-      "id": "d24b",
-      "date": "2024-12-11",
-      "time": "2:00 PM",
-      "phone": "2e3"
     }
   ],
-  "Dr. Davis": [],
-  "Dr. Miller": [],
+  "Dr-Johnson": [],
+  "Dr-Lee": [],
+  "Dr-Brown": [],
+  "Dr-Davis": [],
+  "Dr-Miller": [],
   "Patients": [
     {
-      "id": "0e82",
+      "id": "73fd",
       "date": "2024-12-11",
-      "time": "2:30 PM",
-      "selectedDr": "Dr. Brown",
-      "specialtySelect": "neurology",
-      "email": "vishwasgmail"
-    },
-    {
-      "id": "d24b",
-      "date": "2024-12-11",
-      "time": "2:00 PM",
-      "selectedDr": "Dr. Brown",
-      "specialtySelect": "neurology",
+      "time": "10:30 PM",
+      "selectedDr": "Dr-Smith",
+      "specialtySelect": "cardiology",
       "email": "vishwasgmail"
     }
   ]

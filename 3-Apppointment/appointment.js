@@ -24,7 +24,7 @@ form.addEventListener("submit", (e) => {
 // ###################################
 ShowData();
 window.deleteData = function(target) {
-    console.log(target);
+    console.log("->",target);
     DeleteData(target)
 }
 
