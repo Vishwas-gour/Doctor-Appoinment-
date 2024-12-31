@@ -18,7 +18,7 @@ async function BookSlot(selectedDr) {
     let petientsAppointementURl = `http://localhost:3000/Patients`
     let obj = await fetch(appointmentURL);
     let data = await obj.json();
-
+    console.log(data);
     // Checking Slot is Available or not    
     let ans = SlotAvailability(date, time, time24, data);
     if (!ans) {

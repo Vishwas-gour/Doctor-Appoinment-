@@ -12,14 +12,15 @@ function SlotAvailability(date, time, time24, data) {
     }
 
     // 2. =================> if slot is already booked  
-    let slotAlloted = data.every((e) => {
-        if ((e.date == date) && e.time == time) {
-            return false;
-        }
+    console.log(data);
+    let slotAlloted = data.some((e) => {
+        return e.date === date && e.time === time;
     });
 
+
+    console.log(slotAlloted)
     //  if slotAlloted = false;
-    if (!slotAlloted) {
+    if (slotAlloted) {
         alert("Choose a different slot; the doctor is already booked.");
         return false;
     }
