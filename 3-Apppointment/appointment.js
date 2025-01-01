@@ -2,6 +2,7 @@ import SelectDr from "../0_modules/SelectDr.js";
 import BookSlot from "../0_Modules/BookSlot.js";
 import ShowData from "../0_Modules/ShowData.js";
 import DeleteData from "../0_Modules/Delete.js";
+import UpdateData from "../0_Modules/Update.js";
 
 let specialtySelect = document.querySelector("#specialty");
 let doctorSelect = document.querySelector("#doctor");
@@ -27,7 +28,10 @@ window.deleteData = function(target) {
     console.log("->",target);
     DeleteData(target)
 }
+window.updateData = function(target) {
+    UpdateData(target)
+}
 
 // 1---> update slot
 // 2---> delete after time
-// 3---> show in profile
+// 3---> show in profile ✔️

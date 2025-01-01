@@ -11,6 +11,7 @@ async function ShowData() {
                          <li class = "specialtySelect" id = specialtySelect-${e.id}><input readOnly type="text" value = ${e.specialtySelect}> <li>
                          <li class = "selectedDr" id = selectedDr-${e.id}><input readOnly type="text" value = ${e.selectedDr}> </li>
                          <li class = "delete" id = delete-${e.id}"><button onclick ="deleteData(this)">❌</button></li>
+                          <li class = "update" id = update-${e.id}><button onclick = "updateData(this)">Update</button></li>
                       </ul>`
             //   SHOW ONLY SLOTS OF CURRENT ACCOUNT
             if (e.email == localStorage.getItem("email")) showSlots.innerHTML += ul;

@@ -4,7 +4,6 @@ import SlotAvailability from "./SlotAvailablity.js";
 let login = document.querySelector("#login-info")
 let email = localStorage.getItem("email");
 let name = localStorage.getItem("fullname");
-let specialtySelect = document.querySelector("#specialty").value;
 login.innerHTML = name + " ";
 login.innerHTML += email
 async function BookSlot(selectedDr) {
@@ -13,6 +12,7 @@ async function BookSlot(selectedDr) {
     const time = TimeConverter(time24);
     const date = document.querySelector("#date").value;
     const phone = document.querySelector("#phone").value;
+    let specialtySelect = document.querySelector("#specialty").value;
 
     let appointmentURL = `http://localhost:3000/${selectedDr}`;
 
@@ -51,7 +51,7 @@ async function BookSlot(selectedDr) {
         // In Petient DATABSE
         let patientsResponse = await fetch(petientsAppointementURl, {
             method: "POST",
-            body: JSON.stringify({ id: postId, date, time, selectedDr, specialtySelect, email }),
+            body: JSON.stringify({ id: postId, date, time, selectedDr, specialtySelect, email ,phone}),
             headers: {
                 "Content-Type": "application/json",
             },
