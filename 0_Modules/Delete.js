@@ -1,4 +1,8 @@
 async function DeleteData(target) {
+    let cmp = true;
+    if(target.innerText != "Update"){
+        cmp = confirm("Do you want to remove Appointment")
+    }
     let id = target.closest(".mySlots").id;
     let patientURL = `http://localhost:3000/Patients/${id}`
     console.log(target)
@@ -9,7 +13,6 @@ async function DeleteData(target) {
     const dr = data.selectedDr;
     let doctoreURL = `http://localhost:3000/${dr}/${id}`
 
-    let cmp = confirm("Do you want to remove Appointment")
     if (!cmp) return;
     async function deleteData(url) {
         await fetch(url, {

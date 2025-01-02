@@ -2,7 +2,14 @@
   "Dr-Smith": [],
   "Dr-Johnson": [],
   "Dr-Lee": [],
-  "Dr-Brown": [],
+  "Dr-Brown": [
+    {
+      "id": "a660",
+      "date": "2025-01-14",
+      "time": "10:30 AM",
+      "phone": "13"
+    }
+  ],
   "Dr-Davis": [
     {
       "id": "e076",
@@ -18,9 +25,18 @@
       "date": "2025-01-07",
       "time": "12:00 PM",
       "selectedDr": "Dr-Davis",
-      "specialtySelect": "neurology",
+      "specialtySelect": "Neurology",
       "email": "vishwasgour2002@gmail.com",
       "phone": "823643"
+    },
+    {
+      "id": "3a51",
+      "date": "2025-01-14",
+      "time": "10:30 PM",
+      "selectedDr": "Dr-Smith",
+      "specialtySelect": "orthopedics",
+      "email": "vishwasgour2002@gmail.com",
+      "phone": "123"
     }
   ]
 }

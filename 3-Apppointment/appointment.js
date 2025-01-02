@@ -1,4 +1,4 @@
-import SelectDr from "../0_modules/SelectDr.js";
+import SelectDr from "../0_Modules/SelectDr.js";
 import BookSlot from "../0_Modules/BookSlot.js";
 import ShowData from "../0_Modules/ShowData.js";
 import DeleteData from "../0_Modules/Delete.js";
@@ -24,12 +24,13 @@ form.addEventListener("submit", (e) => {
 
 // ###################################
 ShowData();
-window.deleteData = function(target) {
-    console.log("->",target);
+window.deleteData = function (target) {
+    console.log("->", target);
     DeleteData(target)
 }
-window.updateData = function(target) {
+window.updateData = function (target) {
     UpdateData(target)
+    // alert("wait")
 }
 
 // 1---> update slot
