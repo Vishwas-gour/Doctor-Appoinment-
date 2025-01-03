@@ -20,8 +20,6 @@ form.addEventListener("submit", (e) => {
     let doctor = doctorSelect.value;
     if (submitBtn.innerHTML === "Book Appointment") {
         BookSlot(doctor, true);
-    } else {
-        BookSlot(doctor, false)
     }
     // ====> BookSlot 
 });
@@ -31,13 +29,16 @@ form.addEventListener("submit", (e) => {
 ShowData();
 window.deleteData = function (target) {
     console.log("->", target.innerHTML);
-    if(target.innerHTML === "❌" ){
+    if (target.innerHTML === "❌") {
         DeleteData(target, true)
-    } 
+
+    }
 }
 window.updateData = function (target) {
     UpdateData(target)
 }
+
+
 
 // 1---> update slot
 // 2---> delete after time

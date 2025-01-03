@@ -1,29 +1,27 @@
-function SlotAvailability(date , time, time24, data, checkByUpdateOrBookStot) {
+function SlotAvailability(date, time, time24, data, checkByUpdateOrBookStot) {
     // checkByUpdateOrBookStot == true when call by BookSlot , == false when call by Update
-   
+
     let split = time24.split(":");
-    console.log(split);
+
     let hours = split[0];
-    console.log(hours);
     // 1. =================> Sunday on the date or not (only Emergency Dr. present)
     let newDate = new Date(date);
-    let dayNumb = newDate.getDay(); 
-    if(dayNumb === 0 ){
+    let dayNumb = newDate.getDay();
+    if (dayNumb === 0) {
         if (!confirm("Sunday (only Emergency Doctor available). Proceed?")) {
             return false;
         }
     }
 
     // 2. =================> if slot is already booked  
-    console.log(data);
     let slotAlloted = data.some((e) => {
         return e.date === date && e.time === time;
     });
 
 
-    console.log(slotAlloted)
+
     //  if slotAlloted = false;
-    if (slotAlloted && checkByUpdateOrBookStot) { //--> !data only when it is called by Update.js 
+    if (slotAlloted ) { //--> !data only when it is called by Update.js 
         alert("Choose a different slot; the doctor is already booked.");
         return false;
     }
@@ -36,12 +34,11 @@ function SlotAvailability(date , time, time24, data, checkByUpdateOrBookStot) {
 
     // 4. =================> night-shift (only Emergency Dr. present) 
     if (hours >= 23 || hours < 10) {
-        console.log(hours)
         if (!confirm("Night shift (only Emergency Doctor available). Proceed?")) {
             return false;
         }
     }
-    
+
     return true;
 
 }

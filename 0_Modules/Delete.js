@@ -8,6 +8,8 @@ async function DeleteData(target , check) {
     }
 
     let id = target.closest(".mySlots").id;
+  
+
     let patientURL = `http://localhost:3000/Patients/${id}`
     console.log(target)
     // doctor name of patient for also delete doctor 
@@ -15,9 +17,11 @@ async function DeleteData(target , check) {
     let obj =  await fetch (patientURL);
     let data = await obj.json();
     let dr = data.selectedDr;
-    let doctoreURL = `http://localhost:3000/${dr}/${id}`
 
-    if (!cmp) return;
+    let doctoreURL = `http://localhost:3000/${dr}/${id}`
+    
+
+    if (!cmp) return false;
     async function deleteData(url) {
         await fetch(url, {
             method: "DELETE",

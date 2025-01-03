@@ -23,19 +23,18 @@ async function BookSlot(selectedDr, checkByUpdateOrBookStot) {
     let petientsAppointementURl = `http://localhost:3000/Patients`
     let obj = await fetch(appointmentURL);
     let data = await obj.json();
-    console.log(data);
     // Checking Slot is Available or not    
-    let ans;
+
     if (checkByUpdateOrBookStot) {
-        ans = SlotAvailability(date, time, time24, data, true);
+        let available = SlotAvailability(date, time, time24, data, true);
+        if (!available) {
+            return false;
+        }
     }
     else {
-        ans = SlotAvailability(date, time, time24, data, false);
+        
     }
 
-    if (!ans) {
-        return false;
-    }
 
     // =====> try to POST DATA
     let postId;
@@ -49,7 +48,6 @@ async function BookSlot(selectedDr, checkByUpdateOrBookStot) {
             // .then only for the purpose of getting id from POST data
             .then(response => response.json()) // Parse the JSON response
             .then(post => {
-                console.log("Posted data:", post);
                 postId = post.id
                 // console.log("ID of the new post:", postId); // Check the ID of the created post
             }).catch(error => {
@@ -66,10 +64,20 @@ async function BookSlot(selectedDr, checkByUpdateOrBookStot) {
             },
         });
 
-        if (patientsResponse.ok) alert("appointment fixed");
+        if (patientsResponse.ok) {
+            if (checkByUpdateOrBookStot) {
+                alert("appointment fixed");
+            }
+            else {
+                alert("appointment Updated");
+
+            }
+            return true;
+        }
     }
     catch (error) {
         alert("Response Error" + error)
     }
+    return true;
 }
 export default BookSlot;

@@ -1,17 +1,14 @@
 import SelectDr from "../0_Modules/SelectDr.js";
 import BookSlot from "./BookSlot.js";
 import DeleteData from "./Delete.js";
+let form = document.querySelector("#appointment-form");
 
-async function UpdateData(target,) {
+async function UpdateData(target) {
     let cmp = confirm("Do you want to update date");
     if (!cmp) return false;
-
-    
-
     let parent = target.closest(".mySlots");
     let id = parent.id;
-    console.log(id)
-    console.log(`#date-${id}`)
+
     let liDate = document.querySelector(`#date-${id} input`).value;
     let liTime = document.querySelector(`#time-${id} input`).value;
 
@@ -21,8 +18,8 @@ async function UpdateData(target,) {
 
     let liSpecialtySelect = document.querySelector(`#specialtySelect-${id} input`).value;
     let liSelectedDr = document.querySelector(`#selectedDr-${id} input`).value;
-    console.log("===> ", liTime, liDate, liSpecialtySelect, liSelectedDr)
-    console.log("---------------------")
+    // console.log("===> ", liTime, liDate, liSpecialtySelect, liSelectedDr)
+    // console.log("---------------------")
     // Putting value Again in Input fields for update
     let phone = document.querySelector("#phone").value = 13
     let time = document.querySelector(`#time`).value = liTime;
@@ -54,7 +51,6 @@ async function UpdateData(target,) {
     specialtySelect.value = specialtySelect.options[spcIndex].value;
     // Take value from Appointment and put in Input Field
     let doctorSelect = document.querySelector("#doctor");
-
     specialtySelect.addEventListener("change", () => {
         // ====> SelectDr
         SelectDr(specialtySelect, doctorSelect)
@@ -63,31 +59,22 @@ async function UpdateData(target,) {
     doctorSelect.value = doctorSelect.options[drIndex].value;
 
     let previousDr = doctorSelect.value;
-    // alert("previous" + previousDr); //-->value of previous Doctore
+    submitBtn.addEventListener("click", (e) => {
+        
 
-    // FETCH data from Patient -> checking while update
-    console.log("===")
-    let appointmentURL = `http://localhost:3000/${previousDr}`;
-    let obj = await fetch(appointmentURL);
-    let data = await obj.json();
-    submitBtn.addEventListener("click", () => {
+
+        e.preventDefault();
+        console.log(submitBtn);
+
         let currentDr = doctorSelect.value;
-      
-        cmp = confirm("Do you want to Save data");
-        if (!cmp) return false;
+        BookSlot(currentDr, false)
         DeleteData(target, false);
+        let available = SlotAvailability(date, time, time24, data, false);
+        if (!available) {
+            return false;
+        }
+        return true;
     })
+    return true;
 }
 export default UpdateData;
-
-
-
-
-
-
-
-// let time24 = document.querySelector("#time").value;
-// time = TimeConverter(time24);
-// date = document.querySelector("#date").value;
-// phone = document.querySelector("#phone").value;
-// let specialtySelect = document.querySelector("#specialty").value;
