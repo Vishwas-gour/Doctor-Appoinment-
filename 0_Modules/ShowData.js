@@ -6,8 +6,8 @@ async function ShowData() {
         let data = await obj.json();
         let myData = data.map(e => {
             let ul = `<ul class="mySlots" id = ${e.id}>
-                         <li class = "date" id = date-${e.id}><input readOnly type="text" value = ${e.date}> </li>
-                         <li class = "time" id = time-${e.id}><input readOnly type="text" value = ${e.time}></li>
+                         <li class = "date" id = date-${e.id}><input readOnly type="date" value = ${e.date}> </li>
+                         <li class = "time" id = time-${e.id}><input readOnly type="time" value = ${e.time}></li>
                          <li class = "specialtySelect" id = specialtySelect-${e.id}><input readOnly type="text" value = ${e.specialtySelect}> <li>
                          <li class = "selectedDr" id = selectedDr-${e.id}><input readOnly type="text" value = ${e.selectedDr}> </li>
                          <li class = "delete" id = delete-${e.id}"><button onclick ="deleteData(this)">❌</button></li>

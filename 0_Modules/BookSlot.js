@@ -1,16 +1,20 @@
 import TimeConverter from "../0_Modules/TimeConverter.js"
 import SlotAvailability from "./SlotAvailablity.js";
 
-let login = document.querySelector("#login-info")
+// LOGIN INFO
+// let login = document.querySelector("#login-info")
 let email = localStorage.getItem("email");
-let name = localStorage.getItem("fullname");
-login.innerHTML = name + " ";
-login.innerHTML += email
-async function BookSlot(selectedDr) {
+// let name = localStorage.getItem("fullname");
+// login.innerHTML = name + " ";
+// login.innerHTML += email
+
+async function BookSlot(selectedDr, checkByUpdateOrBookStot) {
+    //  checkByUpdateOrBookStot == true when called by APPOINTMENT, == false when called by UPDATE
+
     //========>> take data from form
     let time24 = document.querySelector("#time").value;
-    const time = TimeConverter(time24);
-    const date = document.querySelector("#date").value;
+    let time = TimeConverter(time24);
+    let date = document.querySelector("#date").value;
     const phone = document.querySelector("#phone").value;
     let specialtySelect = document.querySelector("#specialty").value;
 
@@ -21,7 +25,14 @@ async function BookSlot(selectedDr) {
     let data = await obj.json();
     console.log(data);
     // Checking Slot is Available or not    
-    let ans = SlotAvailability(date, time, time24, data);
+    let ans;
+    if (checkByUpdateOrBookStot) {
+        ans = SlotAvailability(date, time, time24, data, true);
+    }
+    else {
+        ans = SlotAvailability(date, time, time24, data, false);
+    }
+
     if (!ans) {
         return false;
     }
@@ -40,18 +51,16 @@ async function BookSlot(selectedDr) {
             .then(post => {
                 console.log("Posted data:", post);
                 postId = post.id
-                console.log("ID of the new post:", postId); // Check the ID of the created post
+                // console.log("ID of the new post:", postId); // Check the ID of the created post
             }).catch(error => {
                 console.error("Error:", error);
             });
-        // console.log("-->", response.json());
-        let a = 1000000000000000;
-   
-        
+
+
         // In Petient DATABSE
         let patientsResponse = await fetch(petientsAppointementURl, {
             method: "POST",
-            body: JSON.stringify({ id: postId, date, time, selectedDr, specialtySelect, email ,phone}),
+            body: JSON.stringify({ id: postId, date, time, selectedDr, specialtySelect, email, phone }),
             headers: {
                 "Content-Type": "application/json",
             },

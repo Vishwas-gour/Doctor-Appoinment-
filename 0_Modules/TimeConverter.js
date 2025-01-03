@@ -12,6 +12,9 @@ function TimeConverter(time24) {
     } else if (hour12 < 10) {
         hour12 = hour12;
     }
+    hour12 = String(hour12).padStart(2, '0')
+    minutes = String(minutes).padStart(2, '0')
+    // alert(`${hour12}:${minutes} ${period}`)
     return `${hour12}:${minutes} ${period}`;
  }
 export default TimeConverter;

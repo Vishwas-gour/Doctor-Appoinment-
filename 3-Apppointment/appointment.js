@@ -4,6 +4,7 @@ import ShowData from "../0_Modules/ShowData.js";
 import DeleteData from "../0_Modules/Delete.js";
 import UpdateData from "../0_Modules/Update.js";
 
+let submitBtn = document.querySelector("#submit");
 let specialtySelect = document.querySelector("#specialty");
 let doctorSelect = document.querySelector("#doctor");
 let form = document.querySelector("#appointment-form");
@@ -16,21 +17,26 @@ specialtySelect.addEventListener("change", () => {
 
 form.addEventListener("submit", (e) => {
     e.preventDefault();
-    const doctor = doctorSelect.value;
+    let doctor = doctorSelect.value;
+    if (submitBtn.innerHTML === "Book Appointment") {
+        BookSlot(doctor, true);
+    } else {
+        BookSlot(doctor, false)
+    }
     // ====> BookSlot 
-    BookSlot(doctor);
 });
 
 
 // ###################################
 ShowData();
 window.deleteData = function (target) {
-    console.log("->", target);
-    DeleteData(target)
+    console.log("->", target.innerHTML);
+    if(target.innerHTML === "❌" ){
+        DeleteData(target, true)
+    } 
 }
 window.updateData = function (target) {
     UpdateData(target)
-    // alert("wait")
 }
 
 // 1---> update slot
