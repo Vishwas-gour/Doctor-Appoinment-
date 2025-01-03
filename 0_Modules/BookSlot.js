@@ -26,7 +26,7 @@ async function BookSlot(selectedDr, checkByUpdateOrBookStot) {
     // Checking Slot is Available or not    
 
     if (checkByUpdateOrBookStot) {
-        let available = SlotAvailability(date, time, time24, data, true);
+        let available = SlotAvailability(date, time, time24, data);
         if (!available) {
             return false;
         }

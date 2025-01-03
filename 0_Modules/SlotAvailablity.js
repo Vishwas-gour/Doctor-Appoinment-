@@ -1,4 +1,4 @@
-function SlotAvailability(date, time, time24, data, checkByUpdateOrBookStot) {
+function SlotAvailability(date, time, time24, data) {
     // checkByUpdateOrBookStot == true when call by BookSlot , == false when call by Update
 
     let split = time24.split(":");

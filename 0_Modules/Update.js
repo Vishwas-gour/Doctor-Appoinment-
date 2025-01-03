@@ -1,6 +1,8 @@
 import SelectDr from "../0_Modules/SelectDr.js";
 import BookSlot from "./BookSlot.js";
 import DeleteData from "./Delete.js";
+import TimeConverter from "./TimeConverter.js";
+import SlotAvailability from "./SlotAvailablity.js";
 let form = document.querySelector("#appointment-form");
 
 async function UpdateData(target) {
@@ -14,6 +16,7 @@ async function UpdateData(target) {
 
     // change the Submit Button text to Update Appointment
     let submitBtn = document.querySelector("#submit");
+    let boolAppointment = submitBtn.innerText; 
     submitBtn.innerText = "Update Appointment"
 
     let liSpecialtySelect = document.querySelector(`#specialtySelect-${id} input`).value;
@@ -59,20 +62,30 @@ async function UpdateData(target) {
     doctorSelect.value = doctorSelect.options[drIndex].value;
 
     let previousDr = doctorSelect.value;
-    submitBtn.addEventListener("click", (e) => {
-        
-
+    submitBtn.addEventListener("click", async(e) => {
+        //========>> take data from form
+        let time24 = document.querySelector("#time").value;
+        let time = TimeConverter(time24);
+        let date = document.querySelector("#date").value;
+        let currentDr = doctorSelect.value;
+        let appointmentURL = `http://localhost:3000/${currentDr}`;
+        let obj = await fetch(appointmentURL);
+        let data = await obj.json();
+        alert(currentDr)
+        let available = SlotAvailability(date, time, time24, data);
+        if (!available) {
+            return false;
+        }
+      
 
         e.preventDefault();
         console.log(submitBtn);
 
-        let currentDr = doctorSelect.value;
         BookSlot(currentDr, false)
         DeleteData(target, false);
-        let available = SlotAvailability(date, time, time24, data, false);
-        if (!available) {
-            return false;
-        }
+        submitBtn.innerText = boolAppointment;
+
+
         return true;
     })
     return true;
