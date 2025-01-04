@@ -1,42 +1,26 @@
 {
   "Dr-Smith": [],
-  "Dr-Johnson": [],
-  "Dr-Lee": [],
-  "Dr-Brown": [
+  "Dr-Johnson": [
     {
-      "id": "5719",
+      "id": "8354",
       "date": "2025-01-03",
       "time": "12:30 PM",
-      "phone": "13"
+      "phone": "qwer"
     }
   ],
+  "Dr-Lee": [],
+  "Dr-Brown": [],
   "Dr-Davis": [],
-  "Dr-Miller": [
-    {
-      "id": "2b8f",
-      "date": "2025-01-04",
-      "time": "12:30 PM",
-      "phone": "13"
-    }
-  ],
+  "Dr-Miller": [],
   "Patients": [
     {
-      "id": "5719",
+      "id": "8354",
       "date": "2025-01-03",
       "time": "12:30 PM",
-      "selectedDr": "Dr-Brown",
-      "specialtySelect": "neurology",
-      "email": "vishwasgour2002@gmail.com",
-      "phone": "13"
-    },
-    {
-      "id": "2b8f",
-      "date": "2025-01-04",
-      "time": "12:30 PM",
-      "selectedDr": "Dr-Miller",
-      "specialtySelect": "neurology",
-      "email": "vishwasgour2002@gmail.com",
-      "phone": "13"
+      "selectedDr": "Dr-Johnson",
+      "specialtySelect": "cardiology",
+      "email": null,
+      "phone": "qwer"
     }
   ]
 }

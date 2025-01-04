@@ -6,7 +6,11 @@
     transition: all 0.1s ease;
     box-sizing: border-box;
 }
-
+body{
+    display: grid;
+    grid-template-columns: auto auto;
+}
+/* ############### FORM ###############*/
 #login-info {
     text-align: center;
     font-size: 2rem;
@@ -22,6 +26,10 @@
     padding: 20px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
+}
+#appointment-form{
+    
+    width: 30vw;
 }
 
 h1 {
@@ -109,8 +117,10 @@ button:hover {
     outline: none;
 }
 
+/* ############### APPOINTMENTS ###############*/
+
 .mySlots {
-    padding: 1rem;
+    padding: 10px;
     display: flex;
     list-style: none;
     justify-content: space-around;
@@ -118,6 +128,20 @@ button:hover {
     border: 1px solid black;
 }
 
+#show-slots{
+    margin: auto;
+    width: 80%;
+    background-color: lightcoral;
+}
+#show-slots li{
+    padding: 0px;
+    margin: 0px;
+    background-color: rgb(67, 57, 57);
+    display: flex;
+    align-items: center;
+    width: 10% ;
+    justify-content: center;
+}
 .mySlots li input {
     text-align: center;
 }
