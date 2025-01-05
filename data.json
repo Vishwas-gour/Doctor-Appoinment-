@@ -1,21 +1,16 @@
 {
   "Dr-Smith": [],
-  "Dr-Johnson": [],
+  "Dr-Johnson": [
+    {
+      "id": "1e45",
+      "date": "2025-01-03",
+      "time": "12:30 PM",
+      "phone": "1231"
+    }
+  ],
   "Dr-Lee": [],
   "Dr-Brown": [],
   "Dr-Davis": [
-    {
-      "id": "e4f9",
-      "date": "2025-01-03",
-      "time": "12:30 PM",
-      "phone": "12"
-    },
-    {
-      "id": "e4f9",
-      "date": "2025-01-03",
-      "time": "12:30 PM",
-      "phone": "12"
-    },
     {
       "id": "3cce",
       "date": "2025-01-03",
@@ -26,24 +21,6 @@
   "Dr-Miller": [],
   "Patients": [
     {
-      "id": "e4f9",
-      "date": "2025-01-03",
-      "time": "12:30 PM",
-      "selectedDr": "Dr-Davis",
-      "specialtySelect": "neurology",
-      "email": null,
-      "phone": "12"
-    },
-    {
-      "id": "e4f9",
-      "date": "2025-01-03",
-      "time": "12:30 PM",
-      "selectedDr": "Dr-Davis",
-      "specialtySelect": "neurology",
-      "email": null,
-      "phone": "12"
-    },
-    {
       "id": "3cce",
       "date": "2025-01-03",
       "time": "02:30 PM",
@@ -51,6 +28,15 @@
       "specialtySelect": "neurology",
       "email": null,
       "phone": "2314"
+    },
+    {
+      "id": "1e45",
+      "date": "2025-01-03",
+      "time": "12:30 PM",
+      "selectedDr": "Dr-Johnson",
+      "specialtySelect": "cardiology",
+      "email": null,
+      "phone": "1231"
     }
   ]
 }

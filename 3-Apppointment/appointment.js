@@ -28,8 +28,8 @@ form.addEventListener("submit", (e) => {
 // ###################################
 ShowData();
 window.deleteData = function (target) {
-    console.log("->", target.innerHTML);
-    if (target.innerHTML === "❌") {
+    if (target.innerHTML === "Remove") {
+        console.log("->", target.innerHTML);
         DeleteData(target, true)
 
     }

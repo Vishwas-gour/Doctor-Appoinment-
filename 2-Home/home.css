@@ -13,13 +13,7 @@ section {
 
 }
 
-body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #e9f0f7;
-    color: #333;
-}
+
 
 h1,
 h2,
@@ -39,33 +33,25 @@ a {
 }
 
 header {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    background-color: #007bff;
+    background-color: #004aad;
     color: white;
+    padding: 1rem;
     text-align: center;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    position: sticky;
-    top: 0px;
 }
 
-header h1 {
-    font-size: 2.5em;
-    margin-bottom: 10px;
-}
-
-nav a {
-    margin: 0 15px;
+header nav a {
     color: white;
-    font-size: 1.1em;
-    text-transform: uppercase;
-    transition: color 0.3s;
-    
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: bold;
 }
 
-nav a:hover {
-    color: #ffd700;
+header nav a:hover {
+    text-decoration: underline;
+}
+
+header h1:hover {
+    text-shadow: 2px 2px 8px rgba(255, 255, 255, 0.5);
 }
 
 /* Hero Section */
@@ -73,8 +59,8 @@ nav a:hover {
     background: url('https://images.pexels.com/photos/40568/medical-appointment-doctor-healthcare-40568.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1') no-repeat center center/cover;
     color: black;
     text-align: center;
-    padding: 180px 0;
-    height: 100%;
+    padding-top: 180px;
+    height: 85vh;
 }
 
 .hero h2 {
@@ -160,10 +146,14 @@ nav a:hover {
     padding: 60px 0;
     text-align: center;
 }
-
+.testimonial-cards {
+    display: grid;
+    grid-template-columns: auto auto;
+    justify-content:center;
+    align-items: center;
+}
 .testimonial-card {
-    display: inline-block;
-    width: 40%;
+    width: 40vw;
     margin: 10px;
     background: #ffffff;
     padding: 25px;
@@ -175,6 +165,15 @@ nav a:hover {
     color: #007bff;
     font-size: 1.6em;
     margin-bottom: 10px;
+}
+@media (max-width:800px) {
+    .testimonial-cards {
+        grid-template-columns: auto;
+    }
+    .testimonial-card {
+        width: 60vw;
+        
+    }
 }
 
 .testimonial-card p {
