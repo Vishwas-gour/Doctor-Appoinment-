@@ -67,12 +67,17 @@ form {
     margin: auto;
 }
 
-form h1 {
+main h1 {
     font-size: 1.8rem;
     margin-bottom: 20px;
     text-align: center;
     margin: 1rem;
     color: blanchedalmond;
+}
+label{
+    color: white;
+    font-size: 1.3rem;
+
 }
 
 input,
