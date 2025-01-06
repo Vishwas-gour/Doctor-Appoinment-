@@ -18,7 +18,14 @@
       "phone": "2314"
     }
   ],
-  "Dr-Miller": [],
+  "Dr-Miller": [
+    {
+      "id": "b908",
+      "date": "2025-01-03",
+      "time": "12:30 PM",
+      "phone": "123"
+    }
+  ],
   "Patients": [
     {
       "id": "3cce",
@@ -37,6 +44,15 @@
       "specialtySelect": "cardiology",
       "email": null,
       "phone": "1231"
+    },
+    {
+      "id": "b908",
+      "date": "2025-01-03",
+      "time": "12:30 PM",
+      "selectedDr": "Dr-Miller",
+      "specialtySelect": "neurology",
+      "email": null,
+      "phone": "123"
     }
   ]
 }
