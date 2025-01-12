@@ -1,5 +1,18 @@
 {
-  "Dr-Smith": [],
+  "Dr-Smith": [
+    {
+      "id": "4e68",
+      "date": "2025-01-03",
+      "time": "12:30 PM",
+      "phone": "12334"
+    },
+    {
+      "id": "bf5c",
+      "date": "2025-01-03",
+      "time": "02:30 PM",
+      "phone": "242"
+    }
+  ],
   "Dr-Johnson": [
     {
       "id": "1e45",
@@ -8,7 +21,14 @@
       "phone": "1231"
     }
   ],
-  "Dr-Lee": [],
+  "Dr-Lee": [
+    {
+      "id": "6161",
+      "date": "2025-01-03",
+      "time": "12:30 PM",
+      "phone": "23424"
+    }
+  ],
   "Dr-Brown": [],
   "Dr-Davis": [
     {
@@ -53,6 +73,33 @@
       "specialtySelect": "neurology",
       "email": null,
       "phone": "123"
+    },
+    {
+      "id": "4e68",
+      "date": "2025-01-03",
+      "time": "12:30 PM",
+      "selectedDr": "Dr-Smith",
+      "specialtySelect": "cardiology",
+      "email": "1",
+      "phone": "12334"
+    },
+    {
+      "id": "bf5c",
+      "date": "2025-01-03",
+      "time": "02:30 PM",
+      "selectedDr": "Dr-Smith",
+      "specialtySelect": "orthopedics",
+      "email": "1",
+      "phone": "242"
+    },
+    {
+      "id": "6161",
+      "date": "2025-01-03",
+      "time": "12:30 PM",
+      "selectedDr": "Dr-Lee",
+      "specialtySelect": "cardiology",
+      "email": "1",
+      "phone": "23424"
     }
   ]
 }
